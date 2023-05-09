@@ -31,8 +31,9 @@ let centerParticle;
 let particleGrabRadius = 30;
 
 function setup() {
-  let canvasWidth = 1920;
-  let canvasHeight = 1080;
+  let canvasWidth = window.innerWidth;
+  let canvasHeight = window.innerHeight;
+  frameRate(60);
 
   canvas = createCanvas(canvasWidth, canvasHeight);
   canvas.id("canvas");
@@ -290,7 +291,7 @@ function createSymmetricalFlower() {
           particles[i],
           particles[j],
           particles[i].distanceTo(particles[j]),
-          0.1
+          0.001
         );
         springs.push(spring);
         physicFlower.addSpring(spring);
